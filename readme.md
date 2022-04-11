@@ -28,7 +28,6 @@ The repository contains several subfolders. Each subfolder contains mainly 5 typ
 
 <h4 align="left"> Comment:  </h4>
 
-n
 
 
 
