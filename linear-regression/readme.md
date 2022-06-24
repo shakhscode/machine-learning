@@ -32,7 +32,8 @@ $$ minimize \ J(w) = minimize \ \frac{1}{2n}\sum_{i=1}^{n}(y_i-h_1)^2 $$
 In machine learning an iterative gradient descent algorithm is used to minimize the cost function.
 The partial derivatives 
 
-$$ \frac{\partial J(w)}{\partial w_0},\frac{\partial J(w)}{\partial w_1},...\frac{\partial J(w)}{\partial w_m} $$ are considered as gradients and updated in each iteration using the algorithm
+$$\frac{\partial J(w)}{\partial w_0},\frac{\partial J(w)}{\partial w_1},...\frac{\partial J(w)}{\partial w_m} $$ 
+are considered as gradients and updated in each iteration using the algorithm
 $$Repeat \ until \ convergence
 \left\{\begin{matrix}
 w_j := \alpha_j - lr \times \frac{\partial J(w)}{\partial w_j}
