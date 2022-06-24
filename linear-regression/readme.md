@@ -1,3 +1,4 @@
+**Note: This readme.md file is copy pasted from 'BasicTheory.ipynb'. The markdown cells of the original file are rendered either in Jupyter lab or VSCode. In my preview it is working well. But github markdown preview doesn't support all latex or markdown facilities. To get the original preview please open the file 'BasicTheory.ipynb'**
 # Regression 
 A predictive model to establish the relationship between a dependent variable and independent variable(s) to predict continous output for a real given value as input.
 
@@ -52,6 +53,7 @@ $$
 ## Linear regression in Vectorized form
 
 If there are total **m no. of features and n no. of instances** then the feature matrix $ X $ is given by 
+
 $$X= \begin{bmatrix}
 x_{0,1}=1 & x_{1,1} & x_{2,1} & ... & ... & x_{m,1}\\ 
 x_{0,2}=1 & x_{1,2} & x_{2,2} & ... & ... & x_{m,2} \\ 
@@ -61,6 +63,7 @@ x_{0,3}=1 & x_{1,3} & x_{2,3} & ... & ... & x_{m,3}\\
 x_{0,n}=1 & x_{1,n} & x_{2,n} & ... & ... & x_{m,n}
 \end{bmatrix}_{n\times(m+1)}
 $$
+
 $$ x_{j,i} = j^{th} \ feature, \ i^{th} \ instance$$
 In the feature matrix a cloumn represents a feature and a row represents a data point.
 
