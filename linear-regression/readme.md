@@ -1,11 +1,12 @@
-**Note: This readme.md file is copy pasted from 'BasicTheory.ipynb'. The markdown cells of the original file are rendered either in Jupyter lab or VSCode. In my preview it is working well. But github markdown preview doesn't support all latex or markdown facilities. To get the original preview please open the file 'BasicTheory.ipynb'**
+**Note: The markdown cells of the original file is rendered either in Jupyter lab or VSCode. In my preview it is working well. But github markdown preview doesn't support all latex or markdown facilities. To get the original preview please open the file 'BasicTheory.ipynb'**
+
 # Regression 
 A predictive model to establish the relationship between a dependent variable and independent variable(s) to predict continous output for a real given value as input.
 
 # Linear Regression 
 When the dependent variable and the independent variable(s) are linearely related then it is called linear regression. 
 In linear regression data is modeled using a linear equation. For example in a dataset with **m** no. of features the output for a particular instance is given by 
-$$ y = w_0+w_1x_1+w_2x_2 +...w_mx_m$$
+$$ y = w_0+w_1x_1+w_2x_2 +...+ w_mx_m$$
 Where $ w_0,w_1,...,w_m $ are randomly introduced coefficients. In statistics these coefficients are calcualted using certain formulae but in Machine learning these are first introduced randomly and then values are updated using an optimization algorithm to get optimal coefficients for the best fit.
 
 ## Concept of linear regression.
