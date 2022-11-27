@@ -29,4 +29,10 @@ The repository contains several subfolders. Each subfolder is dedicated for a pa
 
 2. Logistic Regression.
 
+3. Support Vector Machine 
+
+4. K-Means Clustering
+
+5. KNN Classification
+
 

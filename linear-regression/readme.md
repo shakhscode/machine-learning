@@ -1,4 +1,4 @@
-**Note: The markdown cells of the original file is rendered either in Jupyter lab or VSCode. In my preview it is working well. But github markdown preview doesn't support all latex or markdown facilities. To get the original preview please open the file 'BasicTheory.ipynb'**
+Note: The markdown cells of the original file is rendered either in Jupyter lab or VSCode. In my preview it is working well. But github markdown preview doesn't support all latex or markdown facilities. To get the original preview please open the file [BasicTheory.ipynb](BasicTheory.ipynb)
 
 # Regression 
 A predictive model to establish the relationship between a dependent variable and independent variable(s) to predict continous output for a real given value as input.
@@ -134,7 +134,3 @@ $$ W = W - \frac{lr}{n}X^T(XW-y) $$
 Normal equation is another way to find optimal coefficients of regression without using gradient descent algorithm.
 Using normal eqation the optimal coefficient is given by 
 $$ W = (X^T X)^{-1}X^Ty $$
-
-### Gradient descent vs Normalization
-
-# Measures to judge a linear regression model
