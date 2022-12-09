@@ -1,38 +1,11 @@
-<h2 align="left"> Machine Learning Repository </h2>
+<h3 align="left"> Machine Learning Projects </h3>
 
-Hello! I am happy that you are here :)
+Hello! happy to see you here :) 
 
-- In this repository I pushed all my codes and files for machine learning dummy projects from my local repository.
+To this repository I pushed the codes and files for some machine learning projects. 
 
-- You can access the files and if there is any mistake let me know. I am ready to adapt any change/modification. Feel free to send me a pull request.
+## Projects
 
-
-
-<h2 align="left">Contents of the Repository </h2>
-The repository contains several subfolders. Each subfolder is dedicated for a particular machine learning algorithm. Each subfolder contains mainly following files.
-
-1. A readme file (basictheory.ipynb or readme.md) about basic theory of the particular algorithm.
-
-2. The selected dataset.
-
-3. A _.ipynb (Jupyter notebook) file for exploratory data analysis on the selected dataset.
-
-4. A _.ipynb file for applying the machine learning algorithm either from scratch and/or using sklearn library. 
-
-5. Related text/pictures/graphs/visualization etc.
-
-
-
-## Algorithms covered
-
-[1. Linear Regression](/linear-regression/readme.md)
-
-2. Logistic Regression.
-
-3. Support Vector Machine 
-
-4. K-Means Clustering
-
-5. KNN Classification
+[1. This Prediction](/linear-regression/readme.md)
 
 
