@@ -1,14 +1,13 @@
-#import the requirements
-import numpy as np
-
-
 class LinearReg():
     def __init__(self) -> None:
+        import numpy as np
+        self.np = np
 
         pass
 
     
     def add_bias(self,features_mat):
+        np=self.np
         l = features_mat.shape[0]
         bias = np.ones([l,1])
         features_mat_with_bias = np.hstack((bias,features_mat))
@@ -18,9 +17,8 @@ class LinearReg():
     
     # return the resiaduals as a column
     def residuals(self,features,coefficients,output):
-
+        np = self.np
         #features = self.add_bias(features)
-        
          
         #print('Features shape:',features.shape)
 
@@ -44,20 +42,18 @@ class LinearReg():
 
         
     def sum_error_x_j(self,features,coefficients,output,j):
-
+        np = self.np
         features = self.add_bias(features_mat=features)
 
         errors = self.residuals(features,coefficients,output)
-
-        error_square = np.round(pow(errors,2),4)
         
-        error_x_j = np.round(np.multiply(error_square,features[:,j]),4)
+        error_x_j = np.round(np.multiply(errors,features[:,j]),4)
         return np.round(np.sum(error_x_j))
     
     
     #define gradient descent algorithm
     def updateCoeffs(self,features, output,lr,iters):
-        
+        np = self.np
         m = features.shape[1]
         n =  features.shape[0]
         
@@ -76,7 +72,7 @@ class LinearReg():
                 coeffs_j = coeffs[0][j]
                 #print('jth_coeff:', coeffs_j)
 
-                temp_j = coeffs_j - np.round((lr/n)*self.sum_error_x_j(
+                temp_j = coeffs_j - np.round(lr*(-2/n)*self.sum_error_x_j(
                                     features,coeffs,output,j=j),4)
 
                 temp_coeffs.append(temp_j)
@@ -92,12 +88,14 @@ class LinearReg():
     # define a function to train the model
 
     def train_the_model(self,X_train, y_train, learning_rate = 0.01, iterations = 100, show = False):
-
+        np = self.np
         #first convert them into numpy ndarrays
         X_train = X_train.to_numpy(dtype=np.float128)
         y_train = y_train.to_numpy(dtype=np.float128)
 
         optimal_coeffs = self.updateCoeffs(X_train,y_train,learning_rate,iterations)
+        is_inf = np.isinf(optimal_coeffs)
+        optimal_coeffs[is_inf] = np.finfo(np.float).max
 
         # create an instance variable to pass it to the test function
         self.optimal_coeffs = optimal_coeffs
@@ -108,6 +106,7 @@ class LinearReg():
     
     # Define a function to test the model
     def test_the_model(self,X_test):
+        np = self.np
         X_test = X_test.to_numpy(dtype=np.float128)
 
         #predict using the obtained coefficients
