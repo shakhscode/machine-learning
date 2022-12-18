@@ -34,7 +34,7 @@ class LinearReg():
 
         error_column = hypothetical - actual
         
-        #print(error_column.shape)
+        #print('Shape of error_column',error_column.shape)
 
         # error_column: nX1 column
         return error_column
@@ -47,11 +47,18 @@ class LinearReg():
 
         np = self.np
         
+        #print('Shape of j_th feature',jth_feature.shape)
+
         gradient_w_j = np.multiply(errors,jth_feature)
         #gradient: nX1 column (from elementwise multiplication)
+        #print('Shape of gradient_w_j',gradient_w_j.shape)
 
         #return is a single value for a particular feature_j and w_j
-        return (1/len(errors))*np.sum(gradient_w_j,axis=1)
+        grad = gradient_w_j.sum()
+        grad = (2/len(errors))*grad
+
+        #print('Shape of particular gradient: ',grad.shape)
+        return grad
     
     
     #define gradient descent algorithm
@@ -60,12 +67,16 @@ class LinearReg():
         #output_y: nX1 column
         np = self.np
 
+        n = features.shape[0]
         num_features = features.shape[1]
+
+        output_y = np.reshape(output_y,[n,1])
 
         #generate random coefficients
         #coeffs: (m+1)X1 column
-        coeffs = np.random.random(size=(num_features,1))
-
+        coeffs = np.zeros((num_features,1),dtype=np.float128)
+       
+ 
 
         for iteration in range(iterations):
 
@@ -75,30 +86,28 @@ class LinearReg():
             #calculate error in prediction
             errors_ = self.residuals(ycap,output_y)
 
-            temp_coeffs = []
+            temp_coeffs = np.zeros((num_features,1),dtype=np.float128)
+
 
             for j in range(num_features):
 
-                #the particular feature
-                x_j = features[:,j]
-                
                 #the particular coefficient
                 w_j = coeffs[j,0]
+
+                #the particular feature
+                x_j = np.reshape(features[:,j],(n,1))
         
                 #gradients 
                 grad_w_j = self.gradient(errors=errors_,jth_feature=x_j)
 
                 
                 #update the coefficient
-                temp_w_j = w_j - lr*grad_w_j
+                temp_w_j = w_j - grad_w_j*lr
 
-                coeffs[j,0] = temp_w_j
+                temp_coeffs[j,0] = temp_w_j
 
-
-                #temp_coeffs.append(temp_w_j)
-                #print(temp_coeffs)
             
-            #coeffs = np.reshape(np.array(temp_coeffs),[num_features,1])
+            coeffs = temp_coeffs
         
         #after all return the optimal coefficients
         #coeffs: (m+1)X1 column
