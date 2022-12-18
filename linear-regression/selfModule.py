@@ -66,6 +66,7 @@ class LinearReg():
         #coeffs: (m+1)X1 column
         coeffs = np.random.random(size=(num_features,1))
 
+
         for iteration in range(iterations):
 
             #we have features and coeffs, predict y
@@ -91,11 +92,13 @@ class LinearReg():
                 #update the coefficient
                 temp_w_j = w_j - lr*grad_w_j
 
+                coeffs[j,0] = temp_w_j
 
-                temp_coeffs.append(temp_w_j)
+
+                #temp_coeffs.append(temp_w_j)
+                #print(temp_coeffs)
             
-            
-            coeffs = np.reshape(np.array(temp_coeffs),[num_features,1])
+            #coeffs = np.reshape(np.array(temp_coeffs),[num_features,1])
         
         #after all return the optimal coefficients
         #coeffs: (m+1)X1 column
